@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class Tile {
+public class Tile implements Cloneable{
     private boolean mine;
     private boolean revealed;
     private boolean flag;
@@ -22,6 +22,10 @@ public class Tile {
 
     public boolean isMine() {
         return mine;
+    }
+
+    public void setMine(boolean mine) {
+        this.mine = mine;
     }
 
     public void reveal() {
@@ -77,5 +81,9 @@ public class Tile {
             return " ";
         }
         return neighbouringMines().toString();
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
