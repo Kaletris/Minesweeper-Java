@@ -2,50 +2,44 @@ import java.util.HashSet;
 
 public class Tile implements Cloneable{
     private boolean mine;
-    private boolean revealed;
-    private boolean flag;
-    private HashSet<Tile> neighbours;
-
+    private boolean revealed = false;
+    private boolean flag = false;
+    private HashSet<Tile> neighbours = new HashSet<>();
     private Table table;
+    private Integer neighbouringMines = 0;
+    private TileView view;
 
     Tile(Table table){
-        new Tile(table, false);
+        this(table, false);
     }
 
     Tile(Table table, boolean mine){
         this.mine = mine;
-        revealed = false;
-        flag = false;
-        neighbours = new HashSet<>();
         this.table = table;
+        neighbouringMines = 0;
     }
 
-    public boolean isMine() {
-        return mine;
-    }
-
-    public void setMine(boolean mine) {
-        this.mine = mine;
+    public void setView(TileView view) {
+        this.view = view;
     }
 
     public void reveal() {
-        if(mine){
-
-        }
-        if(revealed){
+        if (revealed) {
             return;
         }
+
         revealed = true;
-        if(neighbouringMines() == 0){
-            for (Tile tile :
-                    neighbours) {
-                tile.reveal();
+        view.onTileRevealed();
+
+        if(neighbouringMines == 0) {
+            for (Tile neighbour : neighbours) {
+                neighbour.reveal();
             }
         }
     }
 
-    public boolean isFlag() {
-        return flag;
+    public boolean isMine() {
+        return mine;
     }
 
     public void toggleFlag() {
@@ -54,36 +48,20 @@ public class Tile implements Cloneable{
 
     public void addNeighbour(Tile tile){
         neighbours.add(tile);
+        if(tile.isMine()){
+            neighbouringMines++;
+        }
     }
 
-    public Integer neighbouringMines(){
-        Integer mines = 0;
-        for (Tile tile:
-             neighbours) {
-            if (tile.isMine()) {
-                mines++;
-            }
-        }
-        return mines;
-    }
-
-    public String draw(){
-        if(!revealed){
-            return " ";
-        }
-        if(flag){
-            return "F";
-        }
-        if(mine){
-            return  "X";
-        }
-        if(neighbouringMines() == 0){
-            return " ";
-        }
-        return neighbouringMines().toString();
+    public boolean isRevealed() {
+        return revealed;
     }
 
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public Integer getNeighbouringMines() {
+        return neighbouringMines;
     }
 }

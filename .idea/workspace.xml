@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="">
+    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Tile, Table finished">
+      <change afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TableButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TableButtonModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TileView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
@@ -14,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,10 +43,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Kaletris/Desktop/Minesweeper-Java",
+    "last_opened_file_path": "C:/Users/Kaletris/Desktop/eventdemo",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Minesweeper" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,8 +69,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668255577862</updated>
-      <workItem from="1668600999187" duration="12394000" />
+      <workItem from="1668600999187" duration="16636000" />
+      <workItem from="1668861726146" duration="11872000" />
+      <workItem from="1668954409235" duration="928000" />
+      <workItem from="1669138546073" duration="55000" />
+      <workItem from="1669367529870" duration="13414000" />
+      <workItem from="1669627610417" duration="7657000" />
     </task>
+    <task id="LOCAL-00001" summary="Tile, Table finished">
+      <created>1668614647538</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668614647538</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,5 +99,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tile, Table finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tile, Table finished" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="mainFrame.table.tiles.get(7).get(7)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
