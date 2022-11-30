@@ -3,12 +3,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class TableButton extends JToggleButton implements TileView{
-    int column;
     int row;
+    int column;
     Tile tile;
-    public TableButton(int column, int row, Tile tile){
-        this.column = column;
+    public TableButton(int row, int column, Tile tile){
         this.row = row;
+        this.column = column;
         this.tile = tile;
         this.addMouseListener(new MouseAdapter() {
             @Override
@@ -23,7 +23,15 @@ public class TableButton extends JToggleButton implements TileView{
     }
 
     public void onTileRevealed() {
-        setText(tile.getNeighbouringMines().toString());
+        if (tile.isMine()) {
+            setText("*");
+        } else {
+            if(tile.getNeighbouringMines() == 0){
+                setText(" ");
+            } else {
+                setText(tile.getNeighbouringMines().toString());
+            }
+        }
     }
 
     @Override
@@ -41,5 +49,9 @@ public class TableButton extends JToggleButton implements TileView{
 
     public int getRow() {
         return row;
+    }
+
+    public Tile getTile() {
+        return tile;
     }
 }

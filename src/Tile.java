@@ -6,7 +6,7 @@ public class Tile implements Cloneable{
     private boolean flag = false;
     private HashSet<Tile> neighbours = new HashSet<>();
     private Table table;
-    private Integer neighbouringMines = 0;
+    private Integer neighbouringMines;
     private TileView view;
 
     Tile(Table table){
@@ -31,11 +31,13 @@ public class Tile implements Cloneable{
         revealed = true;
         view.onTileRevealed();
 
+        /*
         if(neighbouringMines == 0) {
             for (Tile neighbour : neighbours) {
                 neighbour.reveal();
             }
         }
+        */
     }
 
     public boolean isMine() {
@@ -44,6 +46,7 @@ public class Tile implements Cloneable{
 
     public void toggleFlag() {
         flag = !flag;
+        view.onFlagChange(flag);
     }
 
     public void addNeighbour(Tile tile){

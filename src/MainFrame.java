@@ -14,15 +14,17 @@ public class MainFrame extends JFrame {
     JPanel mainPanel;
     JPanel menuPanel;
     JPanel tablePanel;
-    ArrayList<JToggleButton> tableButtons;
+    ArrayList<TableButton> tableButtons;
     JButton gameButton;
 
     MainFrame(){
         this(new Table());
     }
+    MainFrame(int column, int row, int numberOfMines){
+        this(new Table(column, row, numberOfMines));
+    }
     MainFrame(Table table){
         super("Aknakereső");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.table = table;
         tableButtons = new ArrayList<>();
         mainPanel = new JPanel();
@@ -37,9 +39,10 @@ public class MainFrame extends JFrame {
         mainPanel.add(menuPanel, BorderLayout.NORTH);
         menuPanel.add(gameButton);
         mainPanel.add(tablePanel, BorderLayout.CENTER);
-        for(int i = 0; i < table.getColumns(); i++){
-            for (int j = 0; j < table.getRows(); j++){
-                Tile tile = table.getTile(i,j);
+
+        for (int i = 0; i < table.getRows(); i++){
+            for (int j = 0; j < table.getColumns(); j++){
+                Tile tile = table.getTile(i, j);
                 TableButton tableButton = new TableButton(i, j, tile);
                 tableButton.setPreferredSize(new Dimension(50,50));
                 tableButton.setModel(new TableButtonModel());
@@ -49,6 +52,12 @@ public class MainFrame extends JFrame {
             }
         }
 
+        for (TableButton tableButton : tableButtons) {
+            tableButton.getTile().reveal();
+        }
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setMinimumSize(new Dimension(table.getColumns()*50, table.getRows()*50+20));
         pack();
         setVisible(true);
     }
