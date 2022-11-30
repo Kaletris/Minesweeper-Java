@@ -52,7 +52,7 @@ public class Table {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                tiles.get(i).add(tileDeck.get(i * rows + j));
+                tiles.get(i).add(tileDeck.get(i * columns + j));
             }
         }
     }
@@ -64,6 +64,40 @@ public class Table {
         int lastrow = rows - 1;
         int lastcolumn = columns - 1;
 
+        for(int i = 0; i < rows ; i++){
+            for (int j = 0; j < columns; j++){
+                Tile middle = tiles.get(i).get(j);
+                if (j != 0) {
+                    middle.addNeighbour(tiles.get(i).get(j - 1));
+                    if (i != 0) {
+                        middle.addNeighbour(tiles.get(i - 1).get(j - 1));
+                    }
+
+                    if (i != lastrow) {
+                        middle.addNeighbour(tiles.get(i + 1).get(j - 1));
+                    }
+                }
+                if(j != lastcolumn){
+                    middle.addNeighbour(tiles.get(i).get(j + 1));
+                    if(i != 0){
+                        middle.addNeighbour(tiles.get(i - 1).get(j + 1));
+                    }
+
+                    if(i != lastrow){
+                        middle.addNeighbour(tiles.get(i + 1).get(j + 1));
+                    }
+                }
+
+                if(i != 0) {
+                    middle.addNeighbour(tiles.get(i - 1).get(j));
+                }
+                if(i != lastrow) {
+                    middle.addNeighbour(tiles.get(i + 1).get(j));
+                }
+            }
+        }
+
+        /*
         //4 corner
         Tile topLeft = tiles.get(0).get(0);
         topLeft.addNeighbour(tiles.get(1).get(0));
@@ -86,7 +120,7 @@ public class Table {
         bottomRight.addNeighbour(tiles.get(lastrow    ).get(lastcolumn - 1));
 
         //4 sides
-        for(int i = 1; i < lastcolumn - 1; i++){
+        for(int i = 1; i < lastcolumn; i++){
             Tile top = tiles.get(0).get(i);
             top.addNeighbour(tiles.get(0).get(i - 1));
             top.addNeighbour(tiles.get(1).get(i - 1));
@@ -95,7 +129,7 @@ public class Table {
             top.addNeighbour(tiles.get(0).get(i + 1));
         }
 
-        for(int i = 1; i < lastcolumn - 1; i++){
+        for(int i = 1; i < lastcolumn; i++){
             Tile bottom = tiles.get(lastrow).get(i);
             bottom.addNeighbour(tiles.get(lastrow    ).get(i - 1));
             bottom.addNeighbour(tiles.get(lastrow - 1).get(i - 1));
@@ -104,7 +138,7 @@ public class Table {
             bottom.addNeighbour(tiles.get(lastrow    ).get(i + 1));
         }
 
-        for(int i = 1; i < lastrow - 1; i++){
+        for(int i = 1; i < lastrow; i++){
             Tile left = tiles.get(i).get(0);
             left.addNeighbour(tiles.get(i - 1).get(0));
             left.addNeighbour(tiles.get(i - 1).get(1));
@@ -113,8 +147,8 @@ public class Table {
             left.addNeighbour(tiles.get(i + 1).get(0));
         }
 
-        for(int i = 1; i < lastrow - 1; i++){
-            Tile right = tiles.get(lastrow).get(i);
+        for(int i = 1; i < lastrow; i++){
+            Tile right = tiles.get(i).get(lastcolumn);
             right.addNeighbour(tiles.get(i - 1).get(lastcolumn    ));
             right.addNeighbour(tiles.get(i - 1).get(lastcolumn - 1));
             right.addNeighbour(tiles.get(i    ).get(lastcolumn - 1));
@@ -124,8 +158,8 @@ public class Table {
 
 
         //middle
-        for(int i = 1; i < lastrow - 1; i++){
-            for (int j = 1; j < lastcolumn - 1; j++){
+        for(int i = 1; i < lastrow; i++){
+            for (int j = 1; j < lastcolumn; j++){
                 Tile middle = tiles.get(i).get(j);
                 middle.addNeighbour(tiles.get(i - 1).get(j - 1));
                 middle.addNeighbour(tiles.get(i    ).get(j - 1));
@@ -137,6 +171,9 @@ public class Table {
                 middle.addNeighbour(tiles.get(i + 1).get(j + 1));
             }
         }
+
+
+         */
     }
 
     public int getRows() {

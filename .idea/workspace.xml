@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Tile, Table finished">
+    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Row Column swapped">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,7 @@
       <workItem from="1669367529870" duration="13414000" />
       <workItem from="1669627610417" duration="7657000" />
       <workItem from="1669717376423" duration="42000" />
-      <workItem from="1669800700295" duration="10540000" />
+      <workItem from="1669800700295" duration="15665000" />
     </task>
     <task id="LOCAL-00001" summary="Tile, Table finished">
       <created>1668614647538</created>
@@ -90,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669717405496</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Row Column swapped">
+      <created>1669815470542</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669815470542</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,32 +115,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tile, Table finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tile, Table finished" />
+    <MESSAGE value="Row Column swapped" />
+    <option name="LAST_COMMIT_MESSAGE" value="Row Column swapped" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MainFrame.java</url>
-          <line>58</line>
+          <line>62</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MainFrame.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Table.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="mainFrame.table.tiles.get(7).get(7)" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

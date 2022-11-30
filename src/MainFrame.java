@@ -20,8 +20,8 @@ public class MainFrame extends JFrame {
     MainFrame(){
         this(new Table());
     }
-    MainFrame(int column, int row, int numberOfMines){
-        this(new Table(column, row, numberOfMines));
+    MainFrame(int row, int column, int numberOfMines){
+        this(new Table(row, column, numberOfMines));
     }
     MainFrame(Table table){
         super("Aknakereső");
@@ -49,12 +49,16 @@ public class MainFrame extends JFrame {
                 tile.setView(tableButton);
                 tableButtons.add(tableButton);
                 tablePanel.add(tableButton);
+                tableButton.setFocusable(false);
             }
         }
 
+        /*
         for (TableButton tableButton : tableButtons) {
             tableButton.getTile().reveal();
         }
+
+         */
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(table.getColumns()*50, table.getRows()*50+20));

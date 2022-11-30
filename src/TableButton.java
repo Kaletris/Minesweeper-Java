@@ -1,6 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
+import static javax.swing.SwingUtilities.*;
 
 public class TableButton extends JToggleButton implements TileView{
     int row;
@@ -13,10 +13,14 @@ public class TableButton extends JToggleButton implements TileView{
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (SwingUtilities.isRightMouseButton(e)) {
-                    tile.toggleFlag();
-                } else {
+                if (isLeftMouseButton(e)) {
                     tile.reveal();
+                } else {
+                    if (isRightMouseButton(e)) {
+                        tile.toggleFlag();
+                    } else {
+                        tile.reveal();
+                    }
                 }
             }
         });
