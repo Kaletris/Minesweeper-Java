@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Row Column swapped">
+    <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Table works">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Difficulty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/MineCounterView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/TableButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/TimeCounterView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Win.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test/TableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test/TileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minesweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableButtonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TableButtonModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -35,18 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaletris/Desktop/eventdemo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Kaletris/Desktop/eventdemo",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Minesweeper" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -73,7 +98,12 @@
       <workItem from="1669367529870" duration="13414000" />
       <workItem from="1669627610417" duration="7657000" />
       <workItem from="1669717376423" duration="42000" />
-      <workItem from="1669800700295" duration="15665000" />
+      <workItem from="1669800700295" duration="19322000" />
+      <workItem from="1669974598597" duration="18295000" />
+      <workItem from="1670066104826" duration="3143000" />
+      <workItem from="1670075808765" duration="5235000" />
+      <workItem from="1670152956886" duration="1337000" />
+      <workItem from="1670166015954" duration="38802000" />
     </task>
     <task id="LOCAL-00001" summary="Tile, Table finished">
       <created>1668614647538</created>
@@ -96,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669815470542</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Table works">
+      <created>1669820590264</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820590264</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,15 +153,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tile, Table finished" />
     <MESSAGE value="Row Column swapped" />
-    <option name="LAST_COMMIT_MESSAGE" value="Row Column swapped" />
+    <MESSAGE value="Table works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Table works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MainFrame.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/MainFrame.java</url>
+          <line>214</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
