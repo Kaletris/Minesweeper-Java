@@ -7,7 +7,4 @@ public class TableButtonModel extends JToggleButton.ToggleButtonModel {
     public void setSelected(boolean b) {
         super.setSelected(true);
     }
-    public void mySetSelected(boolean b){
-        super.setSelected(b);
-    }
 }

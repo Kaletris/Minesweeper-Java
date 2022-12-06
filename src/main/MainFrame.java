@@ -43,9 +43,7 @@ public class MainFrame extends JFrame {
         menuPanel = new JPanel();
         tablePanel = new JPanel();
         rankingsButton = new JButton("Rankings");
-        rankingsButton.addActionListener(e -> {
-            createRankingsTable();
-        });
+        rankingsButton.addActionListener(e -> createRankingsTable());
         timeLabel = new JLabel();
         GridLayout gridLayout = new GridLayout(table.getRows(), table.getColumns(), 0, 0);
         tablePanel.setLayout(gridLayout);
@@ -100,12 +98,7 @@ public class MainFrame extends JFrame {
                 tableButtons.add(tableButton);
                 tablePanel.add(tableButton);
                 tableButton.setFocusable(false);
-                tile.setMineCounterView(new MineCounterView() {
-                    @Override
-                    public void onFlagChange(int flags) {
-                        minesLeftLabel.setText("Remaining mines: " + flags);
-                    }
-                });
+                tile.setMineCounterView(flags -> minesLeftLabel.setText("Remaining mines: " + flags));
             }
         }
 
@@ -145,7 +138,7 @@ public class MainFrame extends JFrame {
 
         deSerializeWins();
         wins.add(win);
-        wins.sort((o1, o2) -> o1.time - o2.time);
+        wins.sort(Comparator.comparingInt(o -> o.time));
         wins.sort(Comparator.comparing(o -> o.difficulty));
         serializeWins();
     }

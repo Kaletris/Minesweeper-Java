@@ -3,11 +3,11 @@ package main;
 import java.util.HashSet;
 
 public class Tile implements Cloneable{
-    private boolean mine;
+    private  boolean mine;
     private boolean revealed = false;
     private boolean flag = false;
-    private HashSet<Tile> neighbours = new HashSet<>();
-    private Table table;
+    private  HashSet<Tile> neighbours = new HashSet<>();
+    private  Table table;
     private Integer neighbouringMines;
     private TileView tileView;
     private MineCounterView mineCounterView;
@@ -22,7 +22,7 @@ public class Tile implements Cloneable{
         neighbouringMines = 0;
     }
 
-    public void setTileView(TileView tileView) {
+    public void setTileView(TileView tileView){
         this.tileView = tileView;
     }
     public void forceReveal(){

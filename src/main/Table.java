@@ -11,7 +11,7 @@ public class Table {
     private final int numberOfMines;
     private final int rows;
     private final int columns;
-    private int tilesToReveal;
+    private final int tilesToReveal;
     private int revealedTiles = 0;
     private int flags = 0;
     private MainFrame mainFrame;
@@ -30,11 +30,11 @@ public class Table {
         this.numberOfMines = numberOfMines;
         numberOfTiles = rows * columns;
         tilesToReveal = numberOfTiles - numberOfMines;
-        generateTiles(numberOfMines);
+        generateTiles();
         setNeighbours();
     }
 
-    private void generateTiles(int numberOfMines) {
+    private void generateTiles() {
         ArrayList<Tile> tileDeck = new ArrayList<>(rows * columns);
 
         for (int i = 0; i < rows * columns - numberOfMines; i++) {
@@ -59,7 +59,7 @@ public class Table {
             }
         }
     }
-        public Tile getTile ( int row, int column){
+    public Tile getTile ( int row, int column){
             return tiles.get(row).get(column);
         }
 
@@ -155,5 +155,9 @@ public class Table {
 
     public void setMainFrame(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
+    }
+
+    public int getNumberOfMines() {
+        return numberOfMines;
     }
 }
