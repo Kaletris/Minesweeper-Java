@@ -3,8 +3,8 @@ package main;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Counter extends Thread implements Runnable, TimeCounterView{
-    private AtomicInteger counter = new AtomicInteger(0);
-    private TimeCounterView view;
+    private final AtomicInteger counter = new AtomicInteger(0);
+    private final TimeCounterView view;
     private boolean running = true;
 
     public Counter(TimeCounterView view){

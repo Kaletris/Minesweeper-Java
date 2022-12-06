@@ -60,16 +60,4 @@ public class TableButton extends JToggleButton implements TileView{
             setText("");
         }
     }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public Tile getTile() {
-        return tile;
-    }
 }

@@ -7,22 +7,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class MainFrame extends JFrame {
-    Table table;
-    JPanel mainPanel;
-    JPanel menuPanel;
-    JPanel tablePanel;
-    ArrayList<TableButton> tableButtons;
-    JButton rankingsButton;
-    Counter counter;
-    JLabel timeLabel;
+    private final Table table;
+    private final ArrayList<TableButton> tableButtons;
+    private Counter counter;
+    private JLabel timeLabel;
     Difficulty difficulty;
-    JMenuBar menuBar;
-    JMenu menu;
-    int remainingMines;
-    JMenuItem easyDifficulty, mediumDifficulty, hardDifficulty;
-    JLabel minesLeftLabel;
-    JLabel difficultyLabel;
-    ArrayList<Win> wins;
+    private final JLabel minesLeftLabel;
+    private ArrayList<Win> wins;
 
 
     MainFrame(int row, int column, int numberOfMines, Difficulty difficulty){
@@ -36,35 +27,35 @@ public class MainFrame extends JFrame {
 
         timeLabel = new JLabel();
         counter = new Counter(() -> timeLabel.setText("Time: " + String.format("%02d", counter.getCounter() / 60) + ":" + String.format("%02d", counter.getCounter() % 60)));
-        remainingMines = table.getNumberOfTiles() - table.getTilesToReveal();
+        int remainingMines = table.getNumberOfTiles() - table.getTilesToReveal();
         tableButtons = new ArrayList<>();
-        mainPanel = new JPanel();
+        JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        menuPanel = new JPanel();
-        tablePanel = new JPanel();
-        rankingsButton = new JButton("Rankings");
+        JPanel menuPanel = new JPanel();
+        JPanel tablePanel = new JPanel();
+        JButton rankingsButton = new JButton("Rankings");
         rankingsButton.addActionListener(e -> createRankingsTable());
         timeLabel = new JLabel();
         GridLayout gridLayout = new GridLayout(table.getRows(), table.getColumns(), 0, 0);
         tablePanel.setLayout(gridLayout);
 
-        menuBar = new JMenuBar();
-        menu = new JMenu(difficulty.toString());
-        easyDifficulty = new JMenuItem("EASY");
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu(difficulty.toString());
+        JMenuItem easyDifficulty = new JMenuItem("EASY");
         easyDifficulty.addActionListener(e -> {
                 setVisible(false);
                 new MainFrame(9,9,10,Difficulty.EASY);
             }
         );
 
-        mediumDifficulty = new JMenuItem("MEDIUM");
+        JMenuItem mediumDifficulty = new JMenuItem("MEDIUM");
         mediumDifficulty.addActionListener(e -> {
                 setVisible(false);
                 new MainFrame(16,16,40,Difficulty.MEDIUM);
             }
         );
 
-        hardDifficulty = new JMenuItem("HARD");
+        JMenuItem hardDifficulty = new JMenuItem("HARD");
         hardDifficulty.addActionListener(e -> {
                 setVisible(false);
                 new MainFrame(16,30,99,Difficulty.HARD);
@@ -72,7 +63,7 @@ public class MainFrame extends JFrame {
         );
 
         minesLeftLabel = new JLabel("Remaining mines: " + remainingMines);
-        difficultyLabel = new JLabel("main.Difficulty:");
+        JLabel difficultyLabel = new JLabel("Difficulty:");
 
         add(mainPanel);
         mainPanel.add(menuPanel, BorderLayout.NORTH);
@@ -102,12 +93,6 @@ public class MainFrame extends JFrame {
             }
         }
 
-        /*
-        for (main.TableButton tableButton : tableButtons) {
-            tableButton.getTile().reveal();
-        }
-         */
-
         counter.start();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(table.getColumns()*50, table.getRows()*50+20));
@@ -134,6 +119,9 @@ public class MainFrame extends JFrame {
         }
         String name;
         name = JOptionPane.showInputDialog(getParent(), "You are winner, you may save your success", "Anonymus");
+        if(name == null){
+            return;
+        }
         Win win = new Win(difficulty, name, time);
 
         deSerializeWins();
@@ -144,7 +132,7 @@ public class MainFrame extends JFrame {
     }
 
     private void serializeWins(){
-        FileOutputStream fos = null;
+        FileOutputStream fos;
         ObjectOutputStream oos = null;
         try{
             fos = new FileOutputStream("Rankings.txt");
@@ -164,7 +152,7 @@ public class MainFrame extends JFrame {
     }
 
     private void deSerializeWins(){
-        FileInputStream fin = null;
+        FileInputStream fin;
         ObjectInputStream ois = null;
         try{
             fin = new FileInputStream("Rankings.txt");
@@ -200,11 +188,10 @@ public class MainFrame extends JFrame {
             data[i][2] = String.format("%02d", win.time / 60) + ":" + String.format("%02d", win.time % 60);
             i++;
         }
-        String[] column = {"main.Difficulty", "Name", "Time"};
+        String[] column = {"Difficulty", "Name", "Time"};
         JTable rankingsTable = new JTable(data, column);
         JScrollPane scrollPane = new JScrollPane(rankingsTable);
 
-        //scrollPane.add(rankingsTable);
         frame.setContentPane(scrollPane);
 
         frame.setDefaultCloseOperation(HIDE_ON_CLOSE);

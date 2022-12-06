@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Table {
     //tiles: [row][column]
-    private ArrayList<ArrayList<Tile>> tiles;
+    private final ArrayList<ArrayList<Tile>> tiles;
     private final int numberOfTiles;
     private final int numberOfMines;
     private final int rows;
