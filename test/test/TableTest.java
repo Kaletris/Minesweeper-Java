@@ -20,13 +20,13 @@ public class TableTest {
 
     @Test
     public void tableInic(){
-        Assert.assertEquals(table.getTilesToReveal(), 9*9-10);
-        Assert.assertEquals(table.getColumns(), 9);
-        Assert.assertEquals(table.getRows(), 9);
-        Assert.assertEquals(table.getFlags(), 0);
-        Assert.assertEquals(table.getRevealedTiles(), 0);
-        Assert.assertEquals(table.getNumberOfTiles(), 9*9);
-        Assert.assertEquals(table.getNumberOfMines(), 10);
+        Assert.assertEquals(9*9-10, table.getTilesToReveal());
+        Assert.assertEquals(9, table.getColumns());
+        Assert.assertEquals(9, table.getRows());
+        Assert.assertEquals(0, table.getFlags());
+        Assert.assertEquals(0, table.getRevealedTiles());
+        Assert.assertEquals(9*9, table.getNumberOfTiles());
+        Assert.assertEquals(10, table.getNumberOfMines());
     }
 
     @Test
@@ -56,6 +56,6 @@ public class TableTest {
                 }
             }
         }
-        Assert.assertEquals(revealedMines, 10);
+        Assert.assertEquals(10, revealedMines);
     }
 }

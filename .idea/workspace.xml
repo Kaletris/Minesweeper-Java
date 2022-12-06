@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6dd7b6-9dd8-4131-862a-0ccc10c76fba" name="Changes" comment="Test in progress">
+      <change afterPath="$PROJECT_DIR$/test/test/TableButtonTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TableButtonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TableButtonModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TableButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TableButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test/TableTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test/TileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test/TileTest.java" afterDir="false" />
@@ -55,15 +54,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="Minesweeper" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TableButtonTest.onFlagged">
+    <configuration name="TableButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Minesweeper" />
       <extension name="coverage">
         <pattern>
@@ -72,13 +64,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TableTest" />
+      <option name="MAIN_CLASS_NAME" value="test.TableButtonTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TableTest.revealTiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TableButtonTest.onFlagged" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Minesweeper" />
       <extension name="coverage">
         <pattern>
@@ -87,18 +79,66 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TableTest" />
-      <option name="METHOD_NAME" value="revealTiles" />
+      <option name="MAIN_CLASS_NAME" value="test.TableButtonTest" />
+      <option name="METHOD_NAME" value="onFlagged" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TileTest.revealNeighboursIfNeighbouringMine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TileTest" />
+      <option name="METHOD_NAME" value="revealNeighboursIfNeighbouringMine" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TileTest.revealNeighboursIfNoNeighbouringMine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TileTest" />
+      <option name="METHOD_NAME" value="revealNeighboursIfNoNeighbouringMine" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test in Minesweeper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TableTest" />
-        <item itemvalue="JUnit.TableTest.revealTiles" />
+        <item itemvalue="JUnit.TableButtonTest.onFlagged" />
+        <item itemvalue="JUnit.TableButtonTest" />
+        <item itemvalue="JUnit.test in Minesweeper" />
+        <item itemvalue="JUnit.TileTest.revealNeighboursIfNeighbouringMine" />
+        <item itemvalue="JUnit.TileTest.revealNeighboursIfNoNeighbouringMine" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +163,8 @@
       <workItem from="1670075808765" duration="5235000" />
       <workItem from="1670152956886" duration="1337000" />
       <workItem from="1670166015954" duration="38846000" />
-      <workItem from="1670311016338" duration="2606000" />
+      <workItem from="1670311016338" duration="2625000" />
+      <workItem from="1670321013463" duration="1732000" />
     </task>
     <task id="LOCAL-00001" summary="Tile, Table finished">
       <created>1668614647538</created>
@@ -160,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670278964482</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Test in progress">
+      <created>1670313635743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670313635743</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

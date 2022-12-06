@@ -44,31 +44,7 @@ public class TableButton extends JToggleButton implements TileView{
             if(tile.getNeighbouringMines() == 0){
                 setText(" ");
             } else {
-                /*
-                switch (tile.getNeighbouringMines()) {
-                    case 1: setForeground(Color.BLUE);
-                        break;
-                    case 2: setForeground(Color.GREEN);
-                        break;
-                    case 3: setForeground(Color.RED);
-                        break;
-                    case 4: setForeground(Color.YELLOW);
-                        break;
-                    case 5: setForeground(Color.CYAN);
-                        break;
-                    case 6: setForeground(Color.MAGENTA);
-                        break;
-                    case 7: setForeground(Color.PINK);
-                        break;
-                    case 8: setForeground(Color.BLACK);
-                        break;
-                    default:
-                        break;
-                }
-
-                 */
-                setText(tile.getNeighbouringMines().toString());
-                //setForeground(Color.BLACK);
+                setText(Integer.toString(tile.getNeighbouringMines()));
             }
         }
     }

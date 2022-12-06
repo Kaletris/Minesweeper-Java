@@ -89,7 +89,7 @@ public class Tile implements Cloneable{
         return super.clone();
     }
 
-    public Integer getNeighbouringMines() {
+    public int getNeighbouringMines() {
         return neighbouringMines;
     }
 
