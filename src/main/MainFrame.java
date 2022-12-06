@@ -16,10 +16,10 @@ public class MainFrame extends JFrame {
     private ArrayList<Win> wins;
 
 
-    MainFrame(int row, int column, int numberOfMines, Difficulty difficulty){
+    public MainFrame(int row, int column, int numberOfMines, Difficulty difficulty){
         this(new Table(row, column, numberOfMines), difficulty);
     }
-    MainFrame(Table table, Difficulty difficulty){
+    public MainFrame(Table table, Difficulty difficulty){
         super("Minesweeper");
         this.table = table;
         table.setMainFrame(this);
